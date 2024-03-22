@@ -4,11 +4,12 @@ export const siteConfig = {
 	name: "13 de Enero",
 	description: "Búsqueda de FE",
 	navItems: [
+		/*
 		{
 			label: "Inicio",
 			href: "/",
 		},
-		/*
+		
 		{
 			label: "Pasajes",
 			href: "/biblia/busqueda",
@@ -20,11 +21,12 @@ export const siteConfig = {
 */
 	],
 	navMenuItems: [
+		/*
 		{
 			label: "Inicio",
 			href: "/",
 		},
-		/*
+		
 		{
 			label: "Pasajes",
 			href: "/biblia/busqueda",

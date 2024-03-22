@@ -26,57 +26,6 @@ import Image from "next/image";
 import { title, subtitle } from "@/components/primitives";
 
 export const Navbar = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
-      // Realiza la llamada a la API aquí con el término de búsqueda
-      console.log("Llamada a la API con el término de búsqueda:", searchTerm);
-      callOpenAIAPI(searchTerm);
-    }
-  };
-
-  const callOpenAIAPI = (prompt: string) => {
-
-    const apiKey = process.env.OPENAI_API_KEY;
-    console.log("clave:",apiKey);
-    prompt = "que parte de la biblica catolica hace referencia sobre: " + prompt;
-    axios.post('https://api.openai.com/v1/chat/completions', {
-      model: 'gpt-3.5-turbo',
-      messages: [{"role": "user", "content": prompt}],
-      max_tokens: 100,
-    }, {
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`,
-      }
-    })
-    .then(response => {
-      console.log(response.data.choices[0].message.content);
-    })
-    .catch(error => {
-      console.error('Error al realizar la solicitud:', error);
-    });
-  };  
-
-  const searchInput = (
-    <Input
-      aria-label="Buscar"
-      classNames={{
-        inputWrapper: "bg-default-100",
-        input: "text-sm",
-      }}
-      labelPlacement="outside"
-      placeholder="Buscar pasaje..."
-      startContent={
-        <SearchIcon className="text-base text-default-400 pointer-events-none flex-shrink-0" />
-      }
-      type="search"
-      value={searchTerm}
-      onChange={(e) => setSearchTerm(e.target.value)}
-      onKeyPress={handleKeyPress}      
-    />
-  );
 
   return (
     <NextUINavbar
@@ -86,20 +35,21 @@ export const Navbar = () => {
       className="bg-orange-600"
     >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
-        {/* <NavbarBrand className="rounded-lg gap-3 max-w-fit bg-black">
+         <NavbarBrand className="rounded-s-lg gap-3 max-w-fit bg-black">
           <NextLink
-            className="box-content h-14 w-32 flex justify-start items-center gap-1"
+            className="box-content flex justify-start items-center gap-1"
             href="/"
           >
             <Image
-              src="/busqueda_fe/public/Opcion_4_2.jpeg"
-              width={200}
-              height={200}
+              src="/Logo.jpg"
+              width={50}
+              height={50}
               alt="Logo"
             ></Image>
           </NextLink>
-        </NavbarBrand> */}
+        </NavbarBrand> 
 
+{/*
         <div className="hidden lg:flex gap-4 justify-start ml-2">
           {siteConfig.navItems.map((item) => (
             <NavbarItem key={item.href}>
@@ -116,6 +66,7 @@ export const Navbar = () => {
             </NavbarItem>
           ))}
         </div>
+                */}
       </NavbarContent>
 
       <NavbarContent
@@ -153,6 +104,7 @@ export const Navbar = () => {
 
       <NavbarMenu>
         {/*{searchInput}*/}
+        {/*
         <div className="mx-4 mt-2 flex flex-col gap-2">
           {siteConfig.navMenuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
@@ -174,6 +126,7 @@ export const Navbar = () => {
             </NavbarMenuItem>
           ))}
         </div>
+        */}
       </NavbarMenu>
     </NextUINavbar>
   );
