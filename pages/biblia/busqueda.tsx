@@ -19,14 +19,16 @@ import {
   Textarea,
 } from "@nextui-org/react";
 import axios from "axios";
+import TextareaAutosize from "react-textarea-autosize";
 
 export default function Buscapasajes() {
   const router = useRouter();
   const openAiApiKey = router.query;
   const [searchTerm, setSearchTerm] = useState("");
   const [responseText, setResponseText] = useState(""); // Estado para almacenar la respuesta del API
+  const [text, setText] = useState("");
 
-  console.log('leinda inicial',openAiApiKey);
+  console.log("leinda inicial", openAiApiKey);
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       // Realiza la llamada a la API aquí con el término de búsqueda
@@ -60,6 +62,7 @@ export default function Buscapasajes() {
         const responseData = response.data.choices[0].message.content;
         console.log(responseData);
         setResponseText(responseData);
+        setText(responseData);
       })
       .catch((error) => {
         console.error("Error al realizar la solicitud:", error);
@@ -92,24 +95,33 @@ export default function Buscapasajes() {
             Búsqueda de Pasajes
           </h4>
         </div>
-
-        <div className="m-4 columns-2 text-center justify-center">
+      </section>
+      <section>
+        <div className="m-4 columns-1 text-center justify-center">
           <h2 className="underline decoration-solid font-bold m-4">
             Pasaje a buscar
           </h2>
           {searchInput}
         </div>
-        <div className="basis-full gap-4 py-0 md:py-0 mt-0 columns-1">
-          <Textarea
-            fullWidth
-            size="lg"
-            label="Respuesta"
-            labelPlacement="outside"
-            placeholder="Esperando respuesta"
-            className="max-w-xs"
-            value={responseText} // Mostrar la respuesta del API en el Textarea
-            onChange={(e) => setResponseText(e.target.value)} // No permitir la edición del Textarea
-          />
+        <div className="m-4 columns-1 text-center justify-center">
+
+          <div className="w-full text-center justify-center">
+            <Textarea
+              fullWidth
+              label="Respuesta"
+              variant="bordered"
+              placeholder="Buscando respuesta"
+              disableAnimation
+              
+              name="txtRespuesta"
+              classNames={{
+                base: "max-w-xs",
+                input: "resize-y min-h-[40px]",
+              }}
+              value={responseText} // Mostrar la respuesta del API en el Textarea
+              onChange={(e) => setResponseText(e.target.value)} // No permitir la edición del Textarea
+            />
+          </div>
         </div>
       </section>
     </DefaultLayout>

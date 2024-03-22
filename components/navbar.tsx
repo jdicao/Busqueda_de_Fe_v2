@@ -132,7 +132,8 @@ export const Navbar = () => {
           <ThemeSwitch />
         </NavbarItem>
 
-        <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
+        {/* <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>*/}
+
         <NavbarItem className="hidden md:flex">
           <Avatar
             isBordered
@@ -151,7 +152,7 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarMenu>
-        {searchInput}
+        {/*{searchInput}*/}
         <div className="mx-4 mt-2 flex flex-col gap-2">
           {siteConfig.navMenuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
