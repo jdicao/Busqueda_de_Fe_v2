@@ -42,7 +42,7 @@ export default function Buscapasajes() {
     console.log("Clave", apiKey);
 
     prompt =
-      "que parte de la biblica catolica hace referencia sobre: " + prompt;
+      "De la biblica catolica: " + prompt;
     axios
       .post(
         "https://api.openai.com/v1/chat/completions",
