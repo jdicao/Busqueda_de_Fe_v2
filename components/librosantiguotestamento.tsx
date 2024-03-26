@@ -5,6 +5,7 @@ import {
   CardBody,
   CardFooter,
   Image,
+  Link,
 } from "@nextui-org/react";
 
 // Definir una interfaz para los datos de los libros antiguos
@@ -28,6 +29,8 @@ export default function Librosantiguotestamento() {
   return (
     <div className="gap-2 grid grid-cols-2 sm:grid-cols-6">
       {librosAntiguos.map((item, index) => (
+      <Link className="w-full h-full bg-gradient-to-r from-lime-100" href={`/biblia/${item.id_libro}`} key={index}>
+      <a className="w-full h-full bg-gradient-to-r from-lime-100">        
         <Card
           className="w-full h-full bg-gradient-to-r from-orange-100"
           shadow="sm"
@@ -59,6 +62,8 @@ export default function Librosantiguotestamento() {
             <p className="text-default-500">{item.id_libro}</p>
           </CardFooter>
         </Card>
+        </a>
+        </Link>
       ))}
     </div>
   );
