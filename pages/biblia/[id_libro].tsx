@@ -6,7 +6,7 @@ import DefaultLayout from "@/layouts/default";
 import { subtitle } from "@/components/primitives";
 import bibliaApi from "@/api/bibliaapi";
 import React, { useState, useEffect } from "react";
-import { Button, Spacer } from "@nextui-org/react";
+import { Button, Pagination, Spacer } from "@nextui-org/react";
 import { ChevronLeft, ChevronRight } from "react-iconly";
 import { NextIcon } from "@/controles/NextIcon";
 import { PreviousIcon } from "@/controles/PreviousIcon";
@@ -48,6 +48,17 @@ const LibroDetail = ({ libro }: Props) => {
     null
   );
   const [versoMostrar, setVersoDetalle] = useState<Versos[]>([]);
+
+  const [page, setPage] = React.useState(1);
+  const rowsPerPage = 20;
+  const pages = Math.ceil(versoMostrar.length / rowsPerPage);
+
+  const items = React.useMemo(() => {
+    const start = (page - 1) * rowsPerPage;
+    const end = start + rowsPerPage;
+
+    return versoMostrar.slice(start, end);
+  }, [page, versoMostrar]);
 
   useEffect(() => {
     if (id) {
@@ -129,24 +140,44 @@ const LibroDetail = ({ libro }: Props) => {
 
       <section>
         <div className="m-0 flex justify-between">
-          <Table aria-label="Example static collection table">
+          <Table
+            aria-label="Example table with client side pagination"
+            bottomContent={
+              <div className="flex w-full justify-center">
+                <Pagination
+                  isCompact
+                  showControls
+                  showShadow
+                  color="secondary"
+                  page={page}
+                  total={pages}
+                  onChange={(page) => setPage(page)}
+                />
+              </div>
+            }
+            classNames={{
+              wrapper: "min-h-[222px]",
+            }}
+          >
             <TableHeader>
-              <TableColumn>Capítulo</TableColumn>
-              <TableColumn>Verso</TableColumn>
-              <TableColumn>Texto</TableColumn>
+              <TableColumn key="numero_capitulo">Cap.</TableColumn>
+              <TableColumn key="num_versiculo">Ver.</TableColumn>
+              <TableColumn key="texto">Texto</TableColumn>
             </TableHeader>
-            <TableBody>
-            {versoMostrar.map((item, index) => (
-              <TableRow key={index}>
-                <TableCell>{item.numero_capitulo}</TableCell>
-                <TableCell>{item.num_versiculo}</TableCell>
-                <TableCell>{item.texto}</TableCell>
-              </TableRow>
-               ))}
+            <TableBody items={items}>
+              {(item) => (
+                <TableRow key={item.num_versiculo}>
+                  {(columnKey) => (
+                    <TableCell>{getKeyValue(item, columnKey)}</TableCell>
+                  )}
+                </TableRow>
+              )}
             </TableBody>
           </Table>
         </div>
       </section>
+
+     
     </DefaultLayout>
   );
 };
