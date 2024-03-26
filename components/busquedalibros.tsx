@@ -10,6 +10,7 @@ export default function BusquedaLibros() {
       <AccordionItem
         key="1"
         aria-label="Antiguo Testamento"
+        className="text-orange-600"
         startContent={
           <Avatar
             isBordered
