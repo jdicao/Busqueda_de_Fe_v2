@@ -8,28 +8,28 @@ import {
 } from "@nextui-org/react";
 
 // Definir una interfaz para los datos de los libros antiguos
-interface LibroAntiguo {
+interface LibrosNuevo {
   abreviacion: string;
   id_libro: number;
   nombre: string;
   qnt_capitulos: number;
 }
 
-export default function Librosantiguotestamento() {
-  const [librosAntiguos, setLibrosAntiguos] = useState<LibroAntiguo[]>([]);
+export default function Librosnuevotestamento() {
+  const [librosNuevo, setLibrosNuevo] = useState<LibrosNuevo[]>([]);
 
   useEffect(() => {
-    fetch("https://busqueda-back.onrender.com/api/libros_antiguo")
+    fetch("https://busqueda-back.onrender.com/api/libros_nuevo")
       .then((response) => response.json())
-      .then((data) => setLibrosAntiguos(data))
+      .then((data) => setLibrosNuevo(data))
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
   return (
     <div className="gap-2 grid grid-cols-2 sm:grid-cols-6">
-      {librosAntiguos.map((item, index) => (
+      {librosNuevo.map((item, index) => (
         <Card
-          className="w-full h-full bg-gradient-to-r from-orange-100"
+          className="w-full h-full bg-gradient-to-r from-lime-100"
           shadow="sm"
           key={index}
           isPressable
@@ -51,7 +51,7 @@ export default function Librosantiguotestamento() {
               width={50}
               alt={item.nombre}
               className="w-full h-full"
-              src={`/imagenes/AT_200.jpg`}
+              src={`/imagenes/NT_200.jpg`}
             />
           </CardBody>
           <CardFooter className="text-large justify-between absolute bg-white/80 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">

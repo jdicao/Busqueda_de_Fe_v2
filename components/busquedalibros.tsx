@@ -2,6 +2,7 @@ import React from "react";
 import { Accordion, AccordionItem, Avatar } from "@nextui-org/react";
 import { Card, CardBody, CardFooter, Image, Button } from "@nextui-org/react";
 import Librosantiguotestamento from "./librosantiguotestamento";
+import Librosnuevotestamento from "./librosnuevotestamento";
 export default function BusquedaLibros() {
   const defaultContent = "Libros";
 
@@ -23,7 +24,7 @@ export default function BusquedaLibros() {
         title="Antiguo testamento"
       >
         <section className="mr-10 ml-10">
-        <Librosantiguotestamento></Librosantiguotestamento>
+          <Librosantiguotestamento></Librosantiguotestamento>
         </section>
       </AccordionItem>
       <AccordionItem
@@ -40,7 +41,9 @@ export default function BusquedaLibros() {
         subtitle="27 Libros"
         title="Nuevo Testamnto"
       >
-        {defaultContent}
+        <section className="mr-10 ml-10">
+          <Librosnuevotestamento></Librosnuevotestamento>
+        </section>
       </AccordionItem>
     </Accordion>
   );
