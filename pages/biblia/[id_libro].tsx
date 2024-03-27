@@ -10,6 +10,7 @@ import { Button, Pagination, Spacer } from "@nextui-org/react";
 import { ChevronLeft, ChevronRight } from "react-iconly";
 import { NextIcon } from "@/controles/NextIcon";
 import { PreviousIcon } from "@/controles/PreviousIcon";
+import { Select, SelectItem } from "@nextui-org/react";
 
 import {
   Table,
@@ -48,8 +49,11 @@ const LibroDetail = ({ libro }: Props) => {
     null
   );
   const [versoMostrar, setVersoDetalle] = useState<Versos[]>([]);
+  const [selectedChapter, setSelectedChapter] = useState<string | null>(null); // Estado para almacenar el capítulo seleccionado
+  const [originalVerses, setOriginalVerses] = useState<Versos[]>([]); // Copia de respaldo de los versículos originales
 
   const [page, setPage] = React.useState(1);
+
   const rowsPerPage = 20;
   const pages = Math.ceil(versoMostrar.length / rowsPerPage);
 
@@ -72,7 +76,10 @@ const LibroDetail = ({ libro }: Props) => {
         `https://busqueda-back.onrender.com/api/versiculos_por_libro/${idNumber}`
       )
         .then((response) => response.json())
-        .then((data) => setVersoDetalle(data))
+        .then((data) => {
+          setVersoDetalle(data);
+          setOriginalVerses(data); // Guardar la copia de respaldo de los versículos originales
+        })
         .catch((error) =>
           console.error("Error fetching data de versos:", error)
         );
@@ -91,6 +98,24 @@ const LibroDetail = ({ libro }: Props) => {
     beforeLibro = idNumber;
   }
   beforeLibro = idNumber - 1;
+
+  const listaCapitulos = [];
+  listaCapitulos.push("Todos");
+  for (let i = 1; i <= libroDetalleMostrar.qnt_capitulos; i++) {
+    listaCapitulos.push(String(i));
+  }
+
+  const handleSearch = () => {
+    if (!selectedChapter) return;
+    // Filtrar los versículos según el número de capítulo seleccionado
+    const filteredVerses =
+      selectedChapter === "Todos"
+        ? originalVerses
+        : originalVerses.filter(
+            (verso) => verso.numero_capitulo.toString() === selectedChapter
+          );
+    setVersoDetalle(filteredVerses); // Actualizar los versículos mostrados
+  };
 
   console.log("Libro", idNumber);
   console.log("Anterior", beforeLibro);
@@ -138,8 +163,31 @@ const LibroDetail = ({ libro }: Props) => {
         </div>
       </section>
 
-      <section>
-        <div className="m-0 flex justify-between">
+      <section className="mt-2">
+        <div className="flex w-full justify-center sm:justify-left flex-wrap md:flex-nowrap gap-4">
+          <Select
+            className="max-w-xs"
+            id="selectNumbers"
+            label="Capítulo a buscar"
+            variant="bordered"
+            onChange={(e) => setSelectedChapter(e.target.value)}
+          >
+            {listaCapitulos.map((number) => (
+              <SelectItem key={number} value={number}>
+                {number}
+              </SelectItem>
+            ))}
+          </Select>
+          <Button
+            radius="full"
+            className="bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg mt-0 sm:mt-2"
+            onClick={handleSearch} // Manejador de clic para el botón de búsqueda
+          >
+            Buscar
+          </Button>
+        </div>
+
+        <div className="mt-2 flex justify-between">
           <Table
             aria-label="Example table with client side pagination"
             bottomContent={
@@ -176,8 +224,6 @@ const LibroDetail = ({ libro }: Props) => {
           </Table>
         </div>
       </section>
-
-     
     </DefaultLayout>
   );
 };
