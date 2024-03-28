@@ -165,6 +165,16 @@ const LibroDetail = ({ libro }: Props) => {
 
       <section className="mt-2">
         <div className="flex w-full justify-center sm:justify-left flex-wrap md:flex-nowrap gap-4">
+          <Link href="/biblia/libros">
+            <Button
+              radius="full"
+              className="bg-gradient-to-tr from-green-500 to-blue-500 text-white shadow-lg mt-0 sm:mt-1"
+              size="lg"
+            >
+              Libros
+            </Button>
+          </Link>
+
           <Select
             className="max-w-xs"
             id="selectNumbers"
@@ -180,7 +190,8 @@ const LibroDetail = ({ libro }: Props) => {
           </Select>
           <Button
             radius="full"
-            className="bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg mt-0 sm:mt-2"
+            className="bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg mt-0 sm:mt-1"
+            size="lg"
             onClick={handleSearch} // Manejador de clic para el botón de búsqueda
           >
             Buscar
@@ -189,7 +200,8 @@ const LibroDetail = ({ libro }: Props) => {
 
         <div className="mt-2 flex justify-between">
           <Table
-            aria-label="Example table with client side pagination"
+            aria-label="Lista de versiculos"
+            selectionMode="multiple" 
             bottomContent={
               <div className="flex w-full justify-center">
                 <Pagination

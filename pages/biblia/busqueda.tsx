@@ -26,7 +26,7 @@ export default function Buscapasajes() {
   const openAiApiKey = router.query;
   const [searchTerm, setSearchTerm] = useState("");
   const [responseText, setResponseText] = useState(""); // Estado para almacenar la respuesta del API
-  const [text, setText] = useState("");
+  const [text, setText] = useState<string>("");
 
   console.log("leinda inicial", openAiApiKey);
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -41,8 +41,7 @@ export default function Buscapasajes() {
     const apiKey = openAiApiKey.openAiApiKey;
     console.log("Clave", apiKey);
 
-    prompt =
-      "De la biblica catolica: " + prompt;
+    prompt = "De la biblica catolica: " + prompt;
     axios
       .post(
         "https://api.openai.com/v1/chat/completions",
@@ -87,6 +86,16 @@ export default function Buscapasajes() {
     />
   );
 
+  const speakText = () => {
+    if ("speechSynthesis" in window) {
+      const speechSynthesis = window.speechSynthesis;
+      const speechText = new SpeechSynthesisUtterance(text);
+      speechSynthesis.speak(speechText);
+    } else {
+      console.error("La API de Web Speech no es compatible con este navegador");
+    }
+  };
+
   return (
     <DefaultLayout>
       <section className="sm:basis-full border-1 border-current rounded-lg flex flex-col items-center justify-center gap-4 py-0 md:py-0 mt-0">
@@ -104,7 +113,6 @@ export default function Buscapasajes() {
           {searchInput}
         </div>
         <div className="m-4 columns-1 text-center justify-center">
-
           <div className="w-full text-center justify-center">
             <Textarea
               fullWidth
@@ -112,7 +120,6 @@ export default function Buscapasajes() {
               variant="bordered"
               placeholder="Buscando respuesta"
               disableAnimation
-              
               name="txtRespuesta"
               classNames={{
                 base: "max-w-xs",
@@ -120,8 +127,21 @@ export default function Buscapasajes() {
               }}
               value={responseText} // Mostrar la respuesta del API en el Textarea
               onChange={(e) => setResponseText(e.target.value)} // No permitir la edición del Textarea
+              //onChange={(e) => speakText(e.target.value)} // No permitir la edición del Textarea
             />
           </div>
+        </div>
+
+        <div>
+          <h1>Text to Speech</h1>
+          <p>Ingresa el texto que deseas que se lea en voz alta:</p>
+          <textarea
+            rows={4}
+            cols={50}
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+          />
+          <button onClick={speakText}>Leer Texto</button>
         </div>
       </section>
     </DefaultLayout>
