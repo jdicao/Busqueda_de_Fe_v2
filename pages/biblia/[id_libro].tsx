@@ -23,7 +23,6 @@ import {
   Spinner,
 } from "@nextui-org/react";
 
-//import { Button,  Loading, Row, Spacer } from "@nextui-org/react";
 // Definir una interfaz para los datos de los libros
 interface LibroDetalle {
   abreviacion: string;
@@ -33,6 +32,7 @@ interface LibroDetalle {
 }
 
 interface Versos {
+  id_versiculo: number;
   numero_capitulo: number;
   num_versiculo: number;
   texto: string;
@@ -51,18 +51,10 @@ const LibroDetail = ({ libro }: Props) => {
   const [versoMostrar, setVersoDetalle] = useState<Versos[]>([]);
   const [selectedChapter, setSelectedChapter] = useState<string | null>(null); // Estado para almacenar el capítulo seleccionado
   const [originalVerses, setOriginalVerses] = useState<Versos[]>([]); // Copia de respaldo de los versículos originales
-
-  const [page, setPage] = React.useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
 
   const rowsPerPage = 20;
   const pages = Math.ceil(versoMostrar.length / rowsPerPage);
-
-  const items = React.useMemo(() => {
-    const start = (page - 1) * rowsPerPage;
-    const end = start + rowsPerPage;
-
-    return versoMostrar.slice(start, end);
-  }, [page, versoMostrar]);
 
   useEffect(() => {
     if (id) {
@@ -89,38 +81,44 @@ const LibroDetail = ({ libro }: Props) => {
   if (!id || !libroDetalleMostrar) {
     return null; // O cualquier otra lógica de manejo de estado de carga
   }
-  const idNumber = Number(id);
-  const nextLibro = idNumber + 1;
+  
+  const nextLibro = Number(id) + 1;
+  const beforeLibro = Number(id) === 1 ? Number(id) : Number(id) - 1;
 
-  let beforeLibro: number;
-
-  if (idNumber == 1) {
-    beforeLibro = idNumber;
-  }
-  beforeLibro = idNumber - 1;
-
-  const listaCapitulos = [];
-  listaCapitulos.push("Todos");
+  const listaCapitulos = ["Todos"];
   for (let i = 1; i <= libroDetalleMostrar.qnt_capitulos; i++) {
     listaCapitulos.push(String(i));
   }
 
   const handleSearch = () => {
     if (!selectedChapter) return;
-    // Filtrar los versículos según el número de capítulo seleccionado
-    const filteredVerses =
-      selectedChapter === "Todos"
-        ? originalVerses
-        : originalVerses.filter(
-            (verso) => verso.numero_capitulo.toString() === selectedChapter
-          );
-    setVersoDetalle(filteredVerses); // Actualizar los versículos mostrados
+    const idNumber = Number(id);
+    fetch(`https://busqueda-back.onrender.com/api/versiculos_por_libro/${idNumber}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setOriginalVerses(data); // Guardar la copia de respaldo de los versículos originales
+        // Filtrar los versículos según el número de capítulo seleccionado
+        const filteredVerses =
+          selectedChapter === "Todos"
+            ? data
+            : data.filter(
+                (verso: { numero_capitulo: number; }) => verso.numero_capitulo === Number(selectedChapter)
+              );
+        setVersoDetalle(filteredVerses); // Actualizar los versículos mostrados
+        setCurrentPage(1); // Resetear la página a 1 después de cambiar los versículos
+      })
+      .catch((error) =>
+        console.error("Error fetching data de versos:", error)
+      );
   };
 
-  console.log("Libro", idNumber);
-  console.log("Anterior", beforeLibro);
-  console.log("Siguiente", nextLibro);
-  console.log("Versos", versoMostrar);
+  const startIndex = (currentPage - 1) * rowsPerPage;
+  const endIndex = Math.min(startIndex + rowsPerPage, versoMostrar.length);
+  const items = versoMostrar.slice(startIndex, endIndex);
+
+  const handlePageChange = (newPage: React.SetStateAction<number>) => {
+    setCurrentPage(newPage);
+  };
 
   return (
     <DefaultLayout>
@@ -209,9 +207,9 @@ const LibroDetail = ({ libro }: Props) => {
                   showControls
                   showShadow
                   color="secondary"
-                  page={page}
+                  page={currentPage}
                   total={pages}
-                  onChange={(page) => setPage(page)}
+                  onChange={handlePageChange} // Manejador de cambio de página
                 />
               </div>
             }
@@ -220,13 +218,14 @@ const LibroDetail = ({ libro }: Props) => {
             }}
           >
             <TableHeader>
+              
               <TableColumn key="numero_capitulo">Cap.</TableColumn>
               <TableColumn key="num_versiculo">Ver.</TableColumn>
               <TableColumn key="texto">Texto</TableColumn>
             </TableHeader>
             <TableBody items={items}>
               {(item) => (
-                <TableRow key={item.num_versiculo}>
+                <TableRow key={item.id_versiculo}>
                   {(columnKey) => (
                     <TableCell>{getKeyValue(item, columnKey)}</TableCell>
                   )}
