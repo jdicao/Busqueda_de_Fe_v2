@@ -1,13 +1,35 @@
 import React from "react";
 import { Accordion, AccordionItem, Avatar } from "@nextui-org/react";
+
 import { Card, CardBody, CardFooter, Image, Button } from "@nextui-org/react";
 import Librosantiguotestamento from "./librosantiguotestamento";
 import Librosnuevotestamento from "./librosnuevotestamento";
+import Librosbuscarnombre from "./librosbuscarnombre";
 export default function BusquedaLibros() {
   const defaultContent = "Libros";
 
   return (
     <Accordion selectionMode="multiple">
+      <AccordionItem
+        key="3"
+        aria-label="Buscar"
+        startContent={
+          <Avatar
+            isBordered
+            color="success"
+            radius="lg"
+            src="/imagenes/Busqueda_2_200.jpg"
+          />
+        }
+        subtitle="Búsqueda por nombre"
+        title="Buscar"
+      >
+        <section className="mr-10 ml-10">
+          
+          <Librosbuscarnombre></Librosbuscarnombre>
+
+        </section>
+      </AccordionItem>
       <AccordionItem
         key="1"
         aria-label="Antiguo Testamento"
