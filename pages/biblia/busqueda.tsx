@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 dotenv.config();
 import DefaultLayout from "@/layouts/default";
 import { title, subtitle } from "@/components/primitives";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { SearchIcon } from "@/components/icons";
 import {
   Link,
@@ -17,9 +17,14 @@ import {
   NavbarMenuItem,
   Avatar,
   Textarea,
+  Button,
 } from "@nextui-org/react";
 import axios from "axios";
 import TextareaAutosize from "react-textarea-autosize";
+
+interface Clave {
+  clave: string;
+}
 
 export default function Buscapasajes() {
   const router = useRouter();
@@ -28,18 +33,35 @@ export default function Buscapasajes() {
   const [responseText, setResponseText] = useState(""); // Estado para almacenar la respuesta del API
   const [text, setText] = useState<string>("");
 
-  console.log("leinda inicial", openAiApiKey);
+  const [claveBuscar, setClave] = useState<Clave[]>([]);
+
+  //console.log("leinda inicial", openAiApiKey);
+
+  useEffect(() => {
+    // Fetch de la clave una vez que el componente se ha montado
+    fetchClave();
+  }, []);
+
+  const fetchClave = () => {
+    fetch(`https://busqueda-back.onrender.com/api/keyapi/openai`)
+      .then((response) => response.json())
+      .then((data) => setClave(data))
+      .catch((error) => console.error("Error fetching data:", error));
+  };
+
   const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       // Realiza la llamada a la API aquí con el término de búsqueda
-      console.log("Llamada a la API con el término de búsqueda:", searchTerm);
+      //console.log("Llamada a la API con el término de búsqueda:", searchTerm);
       callOpenAIAPI(searchTerm);
     }
   };
 
   const callOpenAIAPI = (prompt: string) => {
-    const apiKey = openAiApiKey.openAiApiKey;
-    console.log("Clave", apiKey);
+    const apiKey =
+      claveBuscar.length > 0 ? claveBuscar[0].clave : openAiApiKey.openAiApiKey;
+    //const apiKey = openAiApiKey.openAiApiKey;
+    //console.log("Clave desde db ", claveBuscar[0].clave);
 
     prompt = "De la biblica catolica: " + prompt;
     axios
@@ -129,19 +151,16 @@ export default function Buscapasajes() {
               onChange={(e) => setResponseText(e.target.value)} // No permitir la edición del Textarea
               //onChange={(e) => speakText(e.target.value)} // No permitir la edición del Textarea
             />
-          </div>
-        </div>
 
-        <div>
-          <h1>Text to Speech</h1>
-          <p>Ingresa el texto que deseas que se lea en voz alta:</p>
-          <textarea
-            rows={4}
-            cols={50}
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-          />
-          <button onClick={speakText}>Leer Texto</button>
+            <Button
+              radius="full"
+              className="bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg mt-0 sm:mt-1"
+              size="lg"
+              onClick={speakText}
+            >
+              Leer
+            </Button>
+          </div>
         </div>
       </section>
     </DefaultLayout>
