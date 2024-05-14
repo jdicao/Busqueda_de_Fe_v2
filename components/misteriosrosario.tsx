@@ -1,12 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Accordion, AccordionItem, Avatar, Tab, Tabs } from "@nextui-org/react";
-
 import { Card, CardBody, CardFooter, Image, Button } from "@nextui-org/react";
 
 export default function MisteriosRosario() {
+  const [expandedSections, setExpandedSections] = useState<string[]>([]);
+
+  useEffect(() => {
+    const today = new Date().getDay(); // 0 (Domingo) - 6 (Sábado)
+    let sections: string[] = [];
+
+    switch (today) {
+      case 0: // Domingo
+      case 3: // Miércoles
+        sections = ["4"];
+        break;
+      case 1: // Lunes
+      case 6: // Sábado
+        sections = ["1"];
+        break;
+      case 2: // Martes
+      case 5: // Viernes
+        sections = ["3"];
+        break;
+      case 4: // Jueves
+        sections = ["2"];
+        break;
+      default:
+        sections = [];
+    }
+
+    setExpandedSections(sections);
+  }, []);
+
   return (
     <div className="flex flex-col items-center justify-center">
-      <Accordion selectionMode="multiple">
+      <Accordion
+        selectionMode="multiple"
+        // expandedKeys={new Set(expandedSections)}
+      >
         <AccordionItem
           key="1"
           aria-label="Misterios Gozosos"
@@ -22,7 +53,6 @@ export default function MisteriosRosario() {
           title="Gozosos"
         >
           <section className="mr-10 ml-10">
-            {/* <Librosbuscarnombre></Librosbuscarnombre> */}
             <Tabs aria-label="Options">
               <Tab key="1" title="1er">
                 <Card>
@@ -34,7 +64,7 @@ export default function MisteriosRosario() {
                     Alégrate, llena de gracia, el Señor está contigo…Concebirás
                     en tu vientre y darás a luz un hijo, y le pondrás por nombre
                     Jesús. María contestó: Aquí está la esclava del Señor;
-                    hágase en mí según tu palabra (Lucasc 1,2 26-38).
+                    hágase en mí según tu palabra (Lucas 1, 26-38).
                   </CardBody>
                 </Card>
               </Tab>
@@ -63,7 +93,7 @@ export default function MisteriosRosario() {
                     pañales y lo acostó en un pesebre, porque no tenían sitio en
                     la posada. Un ángel se apareció a unos pastores y les dijo:
                     Hoy, en la ciudad de David, os ha nacido un Salvador, el
-                    Mesías, el Señor (Lucas 2, 1-14)
+                    Mesías, el Señor (Lucas 2, 1-14).
                   </CardBody>
                 </Card>
               </Tab>
@@ -114,7 +144,6 @@ export default function MisteriosRosario() {
           title="Luminosos"
         >
           <section className="mr-10 ml-10">
-            {/* <Librosbuscarnombre></Librosbuscarnombre> */}
             <Tabs aria-label="Options">
               <Tab key="1" title="1er">
                 <Card>
@@ -205,7 +234,6 @@ export default function MisteriosRosario() {
           title="Dolorosos"
         >
           <section className="mr-10 ml-10">
-            {/* <Librosbuscarnombre></Librosbuscarnombre> */}
             <Tabs aria-label="Options">
               <Tab key="1" title="1er">
                 <Card>
@@ -265,7 +293,8 @@ export default function MisteriosRosario() {
                     Lo crucificaron a Él y, con Él, a otros dos, uno a cada lado
                     y Jesús en medio. Junto a la cruz de Jesús estaba su Madre.
                     Jesús, al ver a su Madre y cerca al discípulo que tanto
-                    quería, dijo a su Madre: Mujer, ahí tienes a tu hijo (Juan 19, 18-30).
+                    quería, dijo a su Madre: Mujer, ahí tienes a tu hijo (Juan
+                    19, 18-30).
                   </CardBody>
                 </Card>
               </Tab>
@@ -287,7 +316,6 @@ export default function MisteriosRosario() {
           title="Gloriosos"
         >
           <section className="mr-10 ml-10">
-            {/* <Librosbuscarnombre></Librosbuscarnombre> */}
             <Tabs aria-label="Options">
               <Tab key="1" title="1er">
                 <Card>
