@@ -41,7 +41,7 @@ export default function MisteriosRosario() {
                     el Santo que nacerá será llamado Hijo de Dios. (v. 35) Le da
                     como ejemplo a su pariente Isabel, que también está
                     embarazada a pesar de su vejez. (v. 36) María, aceptando la
-                    voluntad de Dios, exclama: "He aquí la sierva del Señor,
+                    voluntad de Dios, exclama: 'He aquí la sierva del Señor,
                     hágase en mí según tu palabra. (v. 38)
                   </CardBody>
                 </Card>
