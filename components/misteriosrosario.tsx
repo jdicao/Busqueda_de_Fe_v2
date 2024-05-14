@@ -42,7 +42,7 @@ export default function MisteriosRosario() {
                     como ejemplo a su pariente Isabel, que también está
                     embarazada a pesar de su vejez. (v. 36) María, aceptando la
                     voluntad de Dios, exclama: "He aquí la sierva del Señor,
-                    hágase en mí según tu palabra." (v. 38)
+                    hágase en mí según tu palabra. (v. 38)
                   </CardBody>
                 </Card>
               </Tab>
@@ -55,7 +55,7 @@ export default function MisteriosRosario() {
                     En cuanto Isabel oye el saludo de María, el niño salta de
                     gozo en su vientre. (v. 41) Isabel, llena del Espíritu
                     Santo, bendice a María y al fruto de su vientre, y llama a
-                    Jesús "Señor". (v. 42-43) María canta un cántico de alabanza
+                    Jesús 'Señor'. (v. 42-43) María canta un cántico de alabanza
                     a Dios por su misericordia y su poder. (v. 46-55) Isabel
                     declara que María es bienaventurada por haber creído en la
                     promesa de Dios. (v. 45) María permanece con Isabel unos
