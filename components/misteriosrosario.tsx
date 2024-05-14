@@ -30,11 +30,11 @@ export default function MisteriosRosario() {
                     <div className="font-bold">
                       La Anunciación del Ángel a María
                     </div>
-                    Al sexto mes, el ángel Gabriel fue enviado por Dios a una
-                    ciudad de Galilea llamada Nazaret, a una virgen desposada
-                    con un hombre llamado José, de la casa de David; el nombre
-                    de la virgen era María. Y entrando, le dijo: «Alégrate,
-                    llena de gracia, el Señor está contigo» (Lucas 1:26-28).
+                    El ángel, entrando en la presencia de María, le dijo:
+                    Alégrate, llena de gracia, el Señor está contigo…Concebirás
+                    en tu vientre y darás a luz un hijo, y le pondrás por nombre
+                    Jesús. María contestó: Aquí está la esclava del Señor;
+                    hágase en mí según tu palabra (Lucasc 1,2 26-38).
                   </CardBody>
                 </Card>
               </Tab>
@@ -44,11 +44,11 @@ export default function MisteriosRosario() {
                     <div className="font-bold">
                       La Visitación de María a su prima Isabel
                     </div>
-                    En aquellos días, María se levantó y se fue apresuradamente
-                    a la región montañosa, a una ciudad de Judá; entró en casa
-                    de Zacarías y saludó a Isabel. Y en cuanto Isabel oyó el
-                    saludo de María, el niño saltó de gozo en su seno, e Isabel
-                    quedó llena del Espíritu Santo (Lucas 1:39-41).
+                    María se puso en camino y fue aprisa a la montaña, y saludó
+                    a Isabel. Isabel dijo a voz en grito: ¡Bendita tú entre las
+                    mujeres y bendito el fruto de tu vientre! Dichosa tú que has
+                    creído. María dijo: Proclama mi alma la grandeza del Señor
+                    (Lucas 1, 39-56).
                   </CardBody>
                 </Card>
               </Tab>
@@ -58,10 +58,12 @@ export default function MisteriosRosario() {
                     <div className="font-bold">
                       El Nacimiento de Jesús en Belén
                     </div>
-                    Y aconteció que, mientras estaban allí, se le cumplieron los
-                    días de su alumbramiento. Y dio a luz a su hijo primogénito,
-                    lo envolvió en pañales y lo acostó en un pesebre, porque no
-                    había lugar para ellos en la posada (Lucas 2:6-7).
+                    Mientras estaban en Belén, le llegó a María el tiempo del
+                    parto y dio a luz a su Hijo primogénito, lo envolvió en
+                    pañales y lo acostó en un pesebre, porque no tenían sitio en
+                    la posada. Un ángel se apareció a unos pastores y les dijo:
+                    Hoy, en la ciudad de David, os ha nacido un Salvador, el
+                    Mesías, el Señor (Lucas 2, 1-14)
                   </CardBody>
                 </Card>
               </Tab>
@@ -71,11 +73,11 @@ export default function MisteriosRosario() {
                     <div className="font-bold">
                       La Presentación de Jesús en el Templo
                     </div>
-                    Cuando se cumplieron los días de la purificación de ellos,
-                    según la ley de Moisés, le trajeron a Jerusalén para
-                    presentarle al Señor, como está escrito en la ley del Señor:
-                    Todo varón primogénito será consagrado al Señor (Lucas
-                    2:22-23).
+                    Los padres de Jesús lo llevaron a Jerusalén para presentarlo
+                    al Señor, de acuerdo con lo escrito en la ley del Señor.
+                    Simeón lo tomó en brazos y dijo: Ahora, Señor, según tu
+                    promesa, puedes dejar a tu siervo irse en paz. Porque mis
+                    ojos han visto a tu Salvador (Lucas 2, 22-40).
                   </CardBody>
                 </Card>
               </Tab>
@@ -85,11 +87,11 @@ export default function MisteriosRosario() {
                     <div className="font-bold">
                       El Niño Jesús Perdido y Hallado en el Templo
                     </div>
-                    Al verlo, se asombraron, y su madre le dijo: «Hijo, ¿por qué
-                    nos has hecho esto? Tu padre y yo te hemos estado buscando
-                    llenos de angustia.» Él les respondió: «¿Por qué me
-                    buscaban? ¿No sabían que tengo que estar en la casa de mi
-                    Padre?» (Lucas 2:48-49).
+                    Cuando Jesús cumplió doce años, subieron sus padres con él a
+                    Jerusalén por las fiestas de Pascua. Cuando terminó, se
+                    volvieron; pero el niño Jesús se quedó en Jerusalén. A los
+                    tres días, lo encontraron en el templo, sentado en medio de
+                    los maestros (Lucas 2, 41-52).
                   </CardBody>
                 </Card>
               </Tab>
@@ -120,11 +122,12 @@ export default function MisteriosRosario() {
                     <div className="font-bold">
                       El Bautismo de Jesús en el Jordán
                     </div>
-                    Y Jesús, después que fue bautizado, salió luego del agua; y
-                    he aquí, los cielos le fueron abiertos, y vio al Espíritu de
-                    Dios que descendía como paloma y venía sobre Él. Y hubo una
-                    voz de los cielos que decía: «Este es mi Hijo amado, en
-                    quien tengo complacencia» (Mateo 3:16-17).
+                    Fue Jesús desde Galilea al Jordán y se presentó a Juan para
+                    que lo bautizara. Apenas se bautizó Jesús, salió del agua;
+                    se abrió el cielo y vio que el Espíritu de Dios bajaba como
+                    una paloma y se posó sobre Él. Y vino una voz del cielo que
+                    decía: Éste es mi Hijo, el amado, mi predilecto (Mateo 3,
+                    13-17).
                   </CardBody>
                 </Card>
               </Tab>
@@ -137,10 +140,10 @@ export default function MisteriosRosario() {
                     En Caná de Galilea, Jesús asiste a una boda junto a su madre
                     María y sus discípulos. Durante el banquete, se produce un
                     imprevisto: se acaba el vino. María, atenta a la situación,
-                    se dirige a Jesús y le comenta: «No tienen vino» (Juan 2:3).
-                    Jesús, con una respuesta que anticipa su naturaleza divina,
-                    le responde: «Mujer, ¿qué tengo yo que ver contigo? Todavía
-                    no ha llegado mi hora» (Juan 2:4).
+                    se dirige a Jesús y le comenta: «No tienen vino». Jesús, con
+                    una respuesta que anticipa su naturaleza divina, le
+                    responde: «Mujer, ¿qué tengo yo que ver contigo? Todavía no
+                    ha llegado mi hora» (Juan 2, 3-4).
                   </CardBody>
                 </Card>
               </Tab>
@@ -153,7 +156,7 @@ export default function MisteriosRosario() {
                     Después que Juan fue encarcelado, Jesús vino a Galilea
                     predicando el evangelio del reino de Dios, y diciendo: «El
                     tiempo se ha cumplido, y el reino de Dios se ha acercado;
-                    arrepentíos, y creed en el evangelio» (Marcos 1:14-15).
+                    arrepentíos, y creed en el evangelio» (Marcos 1, 14-15).
                   </CardBody>
                 </Card>
               </Tab>
@@ -161,9 +164,11 @@ export default function MisteriosRosario() {
                 <Card>
                   <CardBody>
                     <div className="font-bold">La Transfiguración de Jesús</div>
-                    Mientras Él aún hablaba, una nube de luz los cubrió; y he
-                    aquí, una voz desde la nube, que decía: «Este es mi Hijo
-                    amado, en quien tengo complacencia; a Él oíd» (Mateo 17:5).
+                    Subió Jesús a una montaña muy alta y se transfiguró delante
+                    de Pedro, Santiago y Juan. Su rostro resplandecía como el
+                    sol y sus vestidos se volvieron blancos como la luz. Y una
+                    voz desde la nube decía: Éste es mi Hijo, el amado, mi
+                    predilecto. Escuchadlo (Mateo 17, 1-9).
                   </CardBody>
                 </Card>
               </Tab>
@@ -177,8 +182,8 @@ export default function MisteriosRosario() {
                     diciendo: «Esto es mi cuerpo, que por vosotros es dado;
                     haced esto en memoria de mí.» De igual manera, después que
                     hubo cenado, tomó la copa, diciendo: «Esta copa es el nuevo
-                    pacto en mi sangre, que por vosotros se derrama» (Lucas
-                    22:19-20).
+                    pacto en mi sangre, que por vosotros se derrama» (Lucas 22,
+                    19-20).
                   </CardBody>
                 </Card>
               </Tab>
@@ -208,9 +213,11 @@ export default function MisteriosRosario() {
                     <div className="font-bold">
                       La Oración de Jesús en el Huerto de Getsemaní
                     </div>
-                    Y adelantándose un poco, se postró sobre su rostro, orando y
-                    diciendo: «Padre mío, si es posible, pase de mí esta copa;
-                    pero no sea como yo quiero, sino como tú.» (Mateo 26:39).
+                    Jesús se apartó de los discípulos como un tiro de piedra, y,
+                    puesto de rodillas, oraba diciendo Padre, si quieres, aparta
+                    de mí este cáliz; pero no se haga mi voluntad, sino la tuya.
+                    En medio de su angustia oraba con mayor insistencia (Lucas
+                    22, 39-42).
                   </CardBody>
                 </Card>
               </Tab>
@@ -218,7 +225,10 @@ export default function MisteriosRosario() {
                 <Card>
                   <CardBody>
                     <div className="font-bold">La Flagelación de Jesús</div>
-                    Entonces Pilato tomó a Jesús y le azotó. (Juan 19:1).
+                    Todos lo declararon reo de muerte. Algunos se pusieron a
+                    escupirle, y tapándole la cara, lo abofeteaban y le decía:
+                    Haz de profeta. Y los ciados le daban bofetadas. Pilato tomó
+                    a Jesús y mandó que lo azotaran (Marcos 14, 65; Juan 19, 1).
                   </CardBody>
                 </Card>
               </Tab>
@@ -226,7 +236,7 @@ export default function MisteriosRosario() {
                 <Card>
                   <CardBody>
                     <div className="font-bold">La Coronación de Espinas</div>Y
-                    habiéndole tejido una corona de espinas, se la pusieron
+                    Habiéndole tejido una corona de espinas, se la pusieron
                     sobre la cabeza, y una caña en su mano derecha; y
                     arrodillándose delante de Él, le escarnecían, diciendo:
                     «¡Salve, Rey de los judíos!» (Mateo 27:29).
@@ -239,8 +249,10 @@ export default function MisteriosRosario() {
                     <div className="font-bold">
                       Jesús con la Cruz a Cuestas Camino al Calvario
                     </div>
-                    Y Él, cargando su cruz, salió al lugar llamado de la
-                    Calavera, y en hebreo, Gólgota. (Juan 19:17).
+                    Tomaron a Jesús, y él, cargando con la Cruz, salió al sitio
+                    llamado de la Calavera. Lo seguía un gran gentío del pueblo,
+                    y de mujeres que se daban golpes y lanzaban lamentos por Él
+                    (Juan 19, 16-17; Lucas 23, 27).
                   </CardBody>
                 </Card>
               </Tab>
@@ -250,9 +262,10 @@ export default function MisteriosRosario() {
                     <div className="font-bold">
                       La Crucifixión y Muerte de Jesús
                     </div>
-                    Y cuando llegaron al lugar llamado de la Calavera, le
-                    crucificaron allí, y a los malhechores, uno a la derecha y
-                    otro a la izquierda. (Lucas 23:33).
+                    Lo crucificaron a Él y, con Él, a otros dos, uno a cada lado
+                    y Jesús en medio. Junto a la cruz de Jesús estaba su Madre.
+                    Jesús, al ver a su Madre y cerca al discípulo que tanto
+                    quería, dijo a su Madre: Mujer, ahí tienes a tu hijo (Juan 19, 18-30).
                   </CardBody>
                 </Card>
               </Tab>
@@ -283,7 +296,7 @@ export default function MisteriosRosario() {
                     El ángel dijo a las mujeres: «No temáis vosotras; porque yo
                     sé que buscáis a Jesús, el que fue crucificado. No está
                     aquí, pues ha resucitado, como dijo. Venid, ved el lugar
-                    donde fue puesto el Señor» (Mateo 28:5-6).
+                    donde fue puesto el Señor» (Mateo 28, 5-6).
                   </CardBody>
                 </Card>
               </Tab>
@@ -296,7 +309,7 @@ export default function MisteriosRosario() {
                     Jesús dijo a sus discípulos: Sabed que yo estoy con vosotros
                     todos los días hasta el fin del mundo. El Señor Jesús,
                     después de hablarles, ascendió a los cielos y se sentó a la
-                    derecha de Dios (Mateo 28:20; Marcos 16:19)
+                    derecha de Dios (Mateo 28, 20; Marcos 16, 19).
                   </CardBody>
                 </Card>
               </Tab>
@@ -310,7 +323,7 @@ export default function MisteriosRosario() {
                     resonó en toda la casa donde estaban los discípulos. Vieron
                     aparecer unas lenguas, como llamaradas, que se repartían
                     posándose encima de cada uno. Se llenaron todos de Espíritu
-                    Santo (Hechos 2:1-4).
+                    Santo (Hechos 2, 1-4).
                   </CardBody>
                 </Card>
               </Tab>
@@ -321,7 +334,7 @@ export default function MisteriosRosario() {
                       La Asunción de la Virgen María al Cielo
                     </div>
                     María dijo: Me felicitarán todas las generaciones, porque el
-                    Poderoso ha hecho obras grandes por mí. (Lucas 1:48-49).
+                    Poderoso ha hecho obras grandes por mí. (Lucas 1, 48-49).
                   </CardBody>
                 </Card>
               </Tab>
@@ -335,7 +348,7 @@ export default function MisteriosRosario() {
                     sol, con la luna bajo sus pies y una corona de doce
                     estrellas sobre su cabeza. Y fue arrojado el gran dragón, la
                     Serpiente antigua, el llamado diablo y satanás (Apocalipsis
-                    12:1-9)
+                    12, 1-9).
                   </CardBody>
                 </Card>
               </Tab>
