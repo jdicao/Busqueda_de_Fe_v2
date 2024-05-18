@@ -76,7 +76,7 @@ const LibroDetail = ({ libro }: Props) => {
       return textCell ? textCell.textContent || "" : "";
     });
     setSelectedTexts(texts);
-    console.log("Textos seleccionados:", texts);
+    // console.log("Textos seleccionados:", texts);
     startReading(texts);
   };
 

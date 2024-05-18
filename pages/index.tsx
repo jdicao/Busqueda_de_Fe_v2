@@ -23,7 +23,7 @@ const DATA = [
 export default function IndexPage() {
   
   const claveApi = process.env.OPENAI_API_KEY;
-  console.log('Clave Api',claveApi);
+  //console.log('Clave Api',claveApi);
   //const queryParams = stringify({ openAiApiKey: process.env.OPENAI_API_KEY });
   return (
     <DefaultLayout>
