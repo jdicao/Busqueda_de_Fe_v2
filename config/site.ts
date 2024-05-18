@@ -4,7 +4,7 @@ export const siteConfig = {
 	name: "13 de Enero",
 	description: "Búsqueda de FE",
 	navItems: [
-		/*
+		
 		{
 			label: "Inicio",
 			href: "/",
@@ -18,10 +18,13 @@ export const siteConfig = {
 			label: "Libros",
 			href: "/biblia/libros",
 		},
-*/
+		{
+			label: "Santo Rosario",
+			href: "/rezos/rosario",
+		},
 	],
 	navMenuItems: [
-		/*
+		
 		{
 			label: "Inicio",
 			href: "/",
@@ -35,12 +38,11 @@ export const siteConfig = {
 			label: "Libros",
 			href: "/biblia/libros",
 		},
-
 		{
-			label: "Cerrar Sesión",
-
+			label: "Santo Rosario",
+			href: "/rezos/rosario",
 		},
-		*/
+		
 	],
 	links: {
 		github: "https://github.com/jdicao",

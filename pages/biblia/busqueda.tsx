@@ -137,7 +137,7 @@ export default function Buscapasajes() {
         <div className="m-4 columns-1 text-center justify-center">
           <div className="w-full text-center justify-center">
             <Textarea
-              isDisabled
+              // isDisabled
               fullWidth
               label="Respuesta"
               variant="bordered"

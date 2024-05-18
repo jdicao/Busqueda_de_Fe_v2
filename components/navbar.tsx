@@ -12,7 +12,7 @@ import {
   NavbarMenuItem,
   Avatar,
 } from "@nextui-org/react";
-import axios from 'axios';
+import axios from "axios";
 
 import { link as linkStyles } from "@nextui-org/theme";
 
@@ -26,7 +26,6 @@ import Image from "next/image";
 import { title, subtitle } from "@/components/primitives";
 
 export const Navbar = () => {
-
   return (
     <NextUINavbar
       isBordered
@@ -35,22 +34,16 @@ export const Navbar = () => {
       className="bg-orange-600"
     >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
-         <NavbarBrand className="rounded-s-lg gap-3 max-w-fit bg-black">
+        <NavbarBrand className="rounded-s-lg gap-3 max-w-fit bg-black">
           <NextLink
             className="box-content flex justify-start items-center gap-1"
             href="/"
           >
-            <Image
-              src="/Logo.jpg"
-              width={50}
-              height={50}
-              alt="Logo"
-            ></Image>
+            <Image src="/Logo.jpg" width={50} height={50} alt="Logo"></Image>
           </NextLink>
-        </NavbarBrand> 
-
-{/*
-        <div className="hidden lg:flex gap-4 justify-start ml-2">
+        </NavbarBrand>
+        
+        <div className="hidden font-semibold font-sans lg:flex gap-4 justify-start ml-2">
           {siteConfig.navItems.map((item) => (
             <NavbarItem key={item.href}>
               <NextLink
@@ -66,7 +59,7 @@ export const Navbar = () => {
             </NavbarItem>
           ))}
         </div>
-                */}
+                
       </NavbarContent>
 
       <NavbarContent
@@ -104,7 +97,7 @@ export const Navbar = () => {
 
       <NavbarMenu>
         {/*{searchInput}*/}
-        {/*
+        
         <div className="mx-4 mt-2 flex flex-col gap-2">
           {siteConfig.navMenuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
@@ -113,7 +106,7 @@ export const Navbar = () => {
                   index === 0
                     ? "primary"
                     : index === siteConfig.navMenuItems.length - 1
-                    ? "danger"
+                    ? "foreground"
                     : "foreground"
                 }
                 href= {item.href}
@@ -126,7 +119,7 @@ export const Navbar = () => {
             </NavbarMenuItem>
           ))}
         </div>
-        */}
+        
       </NavbarMenu>
     </NextUINavbar>
   );
