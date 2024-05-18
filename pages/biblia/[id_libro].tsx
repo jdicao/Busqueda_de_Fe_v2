@@ -283,7 +283,7 @@ const LibroDetail = ({ libro }: Props) => {
             variant="bordered"
             color="primary"
           >
-            Leer Filas Seleccionadas
+            Leer versículos
           </Button>
           <Button
             onClick={handlePauseContinue}
