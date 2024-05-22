@@ -100,13 +100,13 @@ const LibroDetail = ({ libro }: Props) => {
   useEffect(() => {
     if (id) {
       const idNumber = Number(id);
-      fetch(`https://busqueda-back.onrender.com/api/libros/${idNumber}`)
+      fetch(`https://busqueda-fe-api-oa2db432ja-ue.a.run.app/api/libros/${idNumber}`)
         .then((response) => response.json())
         .then((data) => setLibroDetalle(data[0]))
         .catch((error) => console.error("Error fetching data:", error));
 
       fetch(
-        `https://busqueda-back.onrender.com/api/versiculos_por_libro/${idNumber}`
+        `https://busqueda-fe-api-oa2db432ja-ue.a.run.app/api/versiculos_por_libro/${idNumber}`
       )
         .then((response) => response.json())
         .then((data) => {
@@ -135,7 +135,7 @@ const LibroDetail = ({ libro }: Props) => {
     if (!selectedChapter) return;
     const idNumber = Number(id);
     fetch(
-      `https://busqueda-back.onrender.com/api/versiculos_por_libro/${idNumber}`
+      `https://busqueda-fe-api-oa2db432ja-ue.a.run.app/api/versiculos_por_libro/${idNumber}`
     )
       .then((response) => response.json())
       .then((data) => {

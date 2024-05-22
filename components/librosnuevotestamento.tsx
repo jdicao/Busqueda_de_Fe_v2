@@ -20,7 +20,7 @@ export default function Librosnuevotestamento() {
   const [librosNuevo, setLibrosNuevo] = useState<LibrosNuevo[]>([]);
 
   useEffect(() => {
-    fetch("https://busqueda-back.onrender.com/api/libros_nuevo")
+    fetch("https://busqueda-fe-api-oa2db432ja-ue.a.run.app/api/libros_nuevo")
       .then((response) => response.json())
       .then((data) => setLibrosNuevo(data))
       .catch((error) => console.error("Error fetching data:", error));

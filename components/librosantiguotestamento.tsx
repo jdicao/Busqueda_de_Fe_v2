@@ -20,7 +20,7 @@ export default function Librosantiguotestamento() {
   const [librosAntiguos, setLibrosAntiguos] = useState<LibroAntiguo[]>([]);
 
   useEffect(() => {
-    fetch("https://busqueda-back.onrender.com/api/libros_antiguo")
+    fetch("https://busqueda-fe-api-oa2db432ja-ue.a.run.app/api/libros_antiguo")
       .then((response) => response.json())
       .then((data) => setLibrosAntiguos(data))
       .catch((error) => console.error("Error fetching data:", error));

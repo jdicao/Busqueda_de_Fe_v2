@@ -24,7 +24,7 @@ export default function LibrosBuscarnombre() {
   const [buscarValor, setBuscarValor] = useState("");
 
   const handleSearch = () => {
-    fetch(`https://busqueda-back.onrender.com/api/librosnombre/${buscarValor}`)
+    fetch(`https://busqueda-fe-api-oa2db432ja-ue.a.run.app/api/librosnombre/${buscarValor}`)
       .then((response) => response.json())
       .then((data) => setLibrosBuscar(data))
       .catch((error) => console.error("Error fetching data:", error));

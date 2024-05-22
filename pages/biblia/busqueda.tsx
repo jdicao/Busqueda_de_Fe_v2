@@ -43,7 +43,7 @@ export default function Buscapasajes() {
   }, []);
 
   const fetchClave = () => {
-    fetch(`https://busqueda-back.onrender.com/api/keyapi/openai`)
+    fetch(`https://busqueda-fe-api-oa2db432ja-ue.a.run.app/api/keyapi/openai`)
       .then((response) => response.json())
       .then((data) => setClave(data))
       .catch((error) => console.error("Error fetching data:", error));
