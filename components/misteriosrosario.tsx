@@ -58,7 +58,7 @@ export default function MisteriosRosario() {
                 <Card>
                   <CardBody>
                     <div className="font-bold">
-                      La Anunciación del Ángel a María
+                      La Anunciación del Ángel a la Santísima Virgen María
                     </div>
                     El ángel, entrando en la presencia de María, le dijo:
                     Alégrate, llena de gracia, el Señor está contigo…Concebirás
@@ -72,7 +72,7 @@ export default function MisteriosRosario() {
                 <Card>
                   <CardBody>
                     <div className="font-bold">
-                      La Visitación de María a su prima Isabel
+                      La Visitación de la Santísima Virgen María a su prima Santa Isabel
                     </div>
                     María se puso en camino y fue aprisa a la montaña, y saludó
                     a Isabel. Isabel dijo a voz en grito: ¡Bendita tú entre las
@@ -86,7 +86,7 @@ export default function MisteriosRosario() {
                 <Card>
                   <CardBody>
                     <div className="font-bold">
-                      El Nacimiento de Jesús en Belén
+                      El Nacimiento de nuestro Señor Jesús en Belén
                     </div>
                     Mientras estaban en Belén, le llegó a María el tiempo del
                     parto y dio a luz a su Hijo primogénito, lo envolvió en
@@ -101,7 +101,7 @@ export default function MisteriosRosario() {
                 <Card>
                   <CardBody>
                     <div className="font-bold">
-                      La Presentación de Jesús en el Templo
+                      La Presentación de nuestro Señor Jesús en el Templo
                     </div>
                     Los padres de Jesús lo llevaron a Jerusalén para presentarlo
                     al Señor, de acuerdo con lo escrito en la ley del Señor.
@@ -115,7 +115,7 @@ export default function MisteriosRosario() {
                 <Card>
                   <CardBody>
                     <div className="font-bold">
-                      El Niño Jesús Perdido y Hallado en el Templo
+                      El Santísimo Niño Jesús Perdido y Hallado en el Templo
                     </div>
                     Cuando Jesús cumplió doce años, subieron sus padres con él a
                     Jerusalén por las fiestas de Pascua. Cuando terminó, se
@@ -149,7 +149,7 @@ export default function MisteriosRosario() {
                 <Card>
                   <CardBody>
                     <div className="font-bold">
-                      El Bautismo de Jesús en el Jordán
+                      El Bautismo de nuestro Señor Jesús en el Jordán
                     </div>
                     Fue Jesús desde Galilea al Jordán y se presentó a Juan para
                     que lo bautizara. Apenas se bautizó Jesús, salió del agua;
@@ -164,7 +164,7 @@ export default function MisteriosRosario() {
                 <Card>
                   <CardBody>
                     <div className="font-bold">
-                      La Autorrevelación de Jesús en las Bodas de Caná
+                      La Autorrevelación de nuestro Señor Jesús en las Bodas de Caná
                     </div>
                     En Caná de Galilea, Jesús asiste a una boda junto a su madre
                     María y sus discípulos. Durante el banquete, se produce un
@@ -192,7 +192,7 @@ export default function MisteriosRosario() {
               <Tab key="4" title="4to">
                 <Card>
                   <CardBody>
-                    <div className="font-bold">La Transfiguración de Jesús</div>
+                    <div className="font-bold">La Transfiguración de nuestro Señor Jesús</div>
                     Subió Jesús a una montaña muy alta y se transfiguró delante
                     de Pedro, Santiago y Juan. Su rostro resplandecía como el
                     sol y sus vestidos se volvieron blancos como la luz. Y una
@@ -239,7 +239,7 @@ export default function MisteriosRosario() {
                 <Card>
                   <CardBody>
                     <div className="font-bold">
-                      La Oración de Jesús en el Huerto de Getsemaní
+                      La Oración de nuestro Señor Jesús en el Huerto de Getsemaní
                     </div>
                     Jesús se apartó de los discípulos como un tiro de piedra, y,
                     puesto de rodillas, oraba diciendo Padre, si quieres, aparta
@@ -252,7 +252,7 @@ export default function MisteriosRosario() {
               <Tab key="2" title="2do">
                 <Card>
                   <CardBody>
-                    <div className="font-bold">La Flagelación de Jesús</div>
+                    <div className="font-bold">La Flagelación de nuestro Señor Jesús</div>
                     Todos lo declararon reo de muerte. Algunos se pusieron a
                     escupirle, y tapándole la cara, lo abofeteaban y le decía:
                     Haz de profeta. Y los ciados le daban bofetadas. Pilato tomó
@@ -275,7 +275,7 @@ export default function MisteriosRosario() {
                 <Card>
                   <CardBody>
                     <div className="font-bold">
-                      Jesús con la Cruz a Cuestas Camino al Calvario
+                      Nuestro Señor Jesús con la Cruz a Cuestas Camino al Calvario
                     </div>
                     Tomaron a Jesús, y él, cargando con la Cruz, salió al sitio
                     llamado de la Calavera. Lo seguía un gran gentío del pueblo,
@@ -288,7 +288,7 @@ export default function MisteriosRosario() {
                 <Card>
                   <CardBody>
                     <div className="font-bold">
-                      La Crucifixión y Muerte de Jesús
+                      La Crucifixión y Muerte de nuestro Señor Jesús
                     </div>
                     Lo crucificaron a Él y, con Él, a otros dos, uno a cada lado
                     y Jesús en medio. Junto a la cruz de Jesús estaba su Madre.
@@ -320,7 +320,7 @@ export default function MisteriosRosario() {
               <Tab key="1" title="1er">
                 <Card>
                   <CardBody>
-                    <div className="font-bold">La Resurrección de Jesús</div>
+                    <div className="font-bold">La Resurrección de nuestro Señor Jesús</div>
                     El ángel dijo a las mujeres: «No temáis vosotras; porque yo
                     sé que buscáis a Jesús, el que fue crucificado. No está
                     aquí, pues ha resucitado, como dijo. Venid, ved el lugar
@@ -332,7 +332,7 @@ export default function MisteriosRosario() {
                 <Card>
                   <CardBody>
                     <div className="font-bold">
-                      La Ascensión de Jesús al Cielo
+                      La Ascensión de nuestro Señor Jesús al Cielo
                     </div>
                     Jesús dijo a sus discípulos: Sabed que yo estoy con vosotros
                     todos los días hasta el fin del mundo. El Señor Jesús,
@@ -345,7 +345,7 @@ export default function MisteriosRosario() {
                 <Card>
                   <CardBody>
                     <div className="font-bold">
-                      La Venida del Espíritu Santo en Pentecostés
+                      La Venida del Espíritu Santo
                     </div>
                     De repente, un ruido del cielo, como de un viento recio,
                     resonó en toda la casa donde estaban los discípulos. Vieron
@@ -359,7 +359,7 @@ export default function MisteriosRosario() {
                 <Card>
                   <CardBody>
                     <div className="font-bold">
-                      La Asunción de la Virgen María al Cielo
+                      La Asunción de la Satísima Virgen María al Cielo
                     </div>
                     María dijo: Me felicitarán todas las generaciones, porque el
                     Poderoso ha hecho obras grandes por mí. (Lucas 1, 48-49).
@@ -370,7 +370,7 @@ export default function MisteriosRosario() {
                 <Card>
                   <CardBody>
                     <div className="font-bold">
-                      La Coronación de María como Reina del Cielo y de la Tierra
+                      La Coronación de la Santísima Virgen María como Reina del Cielo y de la Tierra
                     </div>
                     Una gran señal apareció en el cielo: una Mujer, vestida de
                     sol, con la luna bajo sus pies y una corona de doce
