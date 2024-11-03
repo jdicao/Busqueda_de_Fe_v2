@@ -72,7 +72,7 @@ export default function MisteriosRosario() {
                 <Card>
                   <CardBody>
                     <div className="font-bold">
-                      La Visitación de la Santísima Virgen María a su prima Santa Isabel
+                      La Visita de la Santísima Virgen María a su prima Santa Isabel
                     </div>
                     María se puso en camino y fue aprisa a la montaña, y saludó
                     a Isabel. Isabel dijo a voz en grito: ¡Bendita tú entre las
